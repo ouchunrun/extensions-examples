@@ -4,4 +4,6 @@ This sample demonstrates how to use the [`chrome.tabCapture`](https://developer.
 
 ## Overview
 
-In this sample, clicking the action button starts recording the current tab in an offscreen document. After 30 seconds, or once the action button is clicked again, the recording ends and is saved as a download.
+In this sample, clicking the action button starts recording the current tab in an offscreen document. once the action button is clicked again, the recording ends and is saved as a download.
+
+Can capture audio and video of the current page

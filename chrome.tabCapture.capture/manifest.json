@@ -1,0 +1,20 @@
+{
+  "name": "Tab recorder with chrome.tabCapture.capture",
+  "version": "1.0.0.1",
+  "manifest_version": 2,
+  "description": "captured tab media stream using chrome.tabCapture.capture API.",
+  "icons": {
+    "48": "icons/recording_idle.png"
+  },
+  "browser_action": {
+      "default_title": "Tab Capture and Record"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "permissions": [
+    "tabCapture",
+    "activeTab"
+  ]
+}

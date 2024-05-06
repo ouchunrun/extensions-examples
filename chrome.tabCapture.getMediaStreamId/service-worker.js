@@ -40,7 +40,7 @@ chrome.action.onClicked.addListener(async (tab) => {
             type: 'stop-recording',
             target: 'offscreen'
         });
-        chrome.action.setIcon({path: 'icons/recording_idle_48x48.png'});
+        chrome.action.setIcon({path: 'icons/recording_end.png'});
         return;
     }
 
@@ -56,5 +56,5 @@ chrome.action.onClicked.addListener(async (tab) => {
         data: streamId
     });
 
-    chrome.action.setIcon({path: '/icons/recording_48x48.png'});
+    chrome.action.setIcon({path: '/icons/recording.png'});
 });
