@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Desktop Capture with chrome.desktopCapture</title>
+
+  <style>
+    body {
+      background: white;
+    }
+    video {
+        width: 47%;
+        height: 360px;
+        border: 1px solid #e2e2e2;
+        float: left;
+        margin: 0 1%;
+    }
+    button{
+        min-width: 100px;
+        height: 30px;
+        margin: 35px 0;
+    }
+  </style>
+</head>
+<body>
+<div>
+  <video id="video" autoplay></video>
+  <video id="remoteVideo" autoplay></video>
+</div>
+<div>
+    <button id="start">Start</button>
+    <button id="startFromBackgroundPage">Start from background page</button>
+    <button id="cancel">Stop</button>
+</div>
+<script src="popup.js"></script>
+</body>
+</html>
