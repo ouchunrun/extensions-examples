@@ -1,0 +1,17 @@
+{
+  "name": "Tab recorder - tabCapture.getMediaStreamId",
+  "description": "Records the current tab in an offscreen document.",
+  "version": "1.0.0.1",
+  "manifest_version": 3,
+  "minimum_chrome_version": "116",
+  "icons": {
+    "48": "icons/recording_idle_48x48.png"
+  },
+  "action": {
+    "default_icon": "icons/recording_idle_48x48.png"
+  },
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "permissions": ["tabCapture", "offscreen"]
+}
