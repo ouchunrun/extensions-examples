@@ -1,4 +1,7 @@
 
+* 2024-5-15
+  * add `browser.alarms.create` sample
+
 * 2024-5-11
   * add `chrome.manifest.omnibox` sample
 

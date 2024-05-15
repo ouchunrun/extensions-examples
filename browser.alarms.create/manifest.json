@@ -1,0 +1,27 @@
+{
+  "name": "Alarm to keep background script alive",
+  "version": "1.0.0.1",
+  "description": "Stop a background script from going idle in MV3.",
+  "manifest_version": 3,
+  "action":
+  {
+    "default_title": "Alarm to keep background script alive",
+    "default_icon": "alarm-clock.png"
+  },
+  "background": {
+    "scripts":  [
+      "background.js"
+    ],
+    "type": "module"
+  },
+  "icons": {
+    "16": "alarm-clock.png"
+  },
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "permissions": [
+    "tabs",
+    "alarms"
+  ]
+}
