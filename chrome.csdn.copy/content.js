@@ -1,5 +1,5 @@
 
-
+let copyReady = false
 let nameSpace
 try {
     if (chrome && chrome.runtime) {
@@ -22,6 +22,7 @@ if (nameSpace && nameSpace.runtime && nameSpace.runtime.onMessage) {
         console.log('runtime onMessage', request)
         if (request && request.action === 'cancelUserSelectNone') {
             console.log('set user-select to text!!!!!!!')
+            copyReady = true
             setUserSelectToText()
         }
         sendResponse('request success')
@@ -44,10 +45,23 @@ function setUserSelectToText(el = document.body) {
  * 2.鼠标松开时，复制选中的文本
  */
 document.documentElement.addEventListener('mouseup', e => {
+    // 仅处理csdn的页面
+    if(document.domain !== 'blog.csdn.net') {
+        return;
+    }
+
+    // 获取选中的文本，没有选中文本则返回
     const pasteText = window.getSelection().toString();
     if (null === pasteText || undefined === pasteText || '' === pasteText.trim()) {
         return;
     }
+
+    // 收到背景页消息后才处理，否则不处理
+    if(!copyReady){
+        return;
+    }
+
+    copyReady = false
     navigator.clipboard.writeText(pasteText).then(() => {
         console.log('复制成功！', pasteText)
     }).catch((e) => {
