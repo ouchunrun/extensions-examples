@@ -1,0 +1,24 @@
+{
+  "name": "CSDN Copy",
+  "version": "1.0.0.1",
+  "manifest_version": 3,
+  "description": "CSDN disallows copying without login.",
+  "action": {
+    "default_icon": "icons/copy.png"
+  },
+  "icons": {
+    "64": "icons/copy.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "activeTab"
+  ]
+}

@@ -1,4 +1,7 @@
 
+* 2024-7-30
+  * add `csdn copy` sample
+
 * 2024-5-15
   * add `browser.alarms.create` sample
 
