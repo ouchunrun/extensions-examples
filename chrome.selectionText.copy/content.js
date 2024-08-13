@@ -57,7 +57,7 @@ function createCopyButton(e, pasteText){
     }
     
     copyButton = document.createElement('button')
-    copyButton.style = 'position: absolute;background-color: #fff;box-shadow: rgb(0, 39, 97) 0px 0px 10px;border-radius: 5px;width: 50px;height: 30px;font-size: 14px;font-family: fantasy;color: darkorange;'
+    copyButton.style = 'position: absolute;background-color: #fff;box-shadow: rgb(0, 39, 97) 0px 0px 10px;border: none;border-radius: 5px;width: 50px;height: 30px;font-size: 14px;font-family: fantasy;color: darkorange;'
     copyButton.id = 'copyButtonWithClick'
     copyButton.innerText = 'Copy'
     copyButton.addEventListener('click', e => {
@@ -99,9 +99,13 @@ document.documentElement.addEventListener('mouseup', e => {
     const pasteText = window.getSelection().toString()
     if (null === pasteText || undefined === pasteText || '' === pasteText.trim()) {
         // 没有选中的文本，不处理
-        let copyButton = document.getElementById('copyButtonWithClick')
-        if(copyButton && copyButton.parentElement) {
-            copyButton.parentElement.removeChild(copyButton)
+        try{
+            let copyButton = document.getElementById('copyButtonWithClick')
+            if(copyButton && copyButton.parentElement) {
+                copyButton.parentElement.removeChild(copyButton)
+            }
+        }catch (e){
+            console.log('remove copyButton failed', e)
         }
         return
     }
