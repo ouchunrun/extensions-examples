@@ -1,6 +1,6 @@
 {
   "name": "Selection Text Copy",
-  "version": "1.0.0.4",
+  "version": "1.0.0.5",
   "manifest_version": 3,
   "description": "Selection Text Copy without login",
   "action": {
